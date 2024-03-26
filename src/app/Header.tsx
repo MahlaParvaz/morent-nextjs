@@ -13,7 +13,7 @@ function Header() {
                 className="block py-2 bg-primary-900 text-white rounded-md px-6"
                 href="/auth"
               >
-                sign in | login{' '}
+                ورود | ثبت نام
               </Link>
             </li>
             <li>

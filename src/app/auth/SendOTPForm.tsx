@@ -15,13 +15,12 @@ export default function SendOTPForm({
   onChange,
   onSubmit,
   isLoading,
-  
 }: Props) {
   return (
     <div>
       <form className="space-y-10" onSubmit={onSubmit}>
         <TextField
-          label="Phone Number "
+          label="شماره موبایل "
           name="phoneNumber"
           value={phoneNumber}
           onChange={onChange}
@@ -31,7 +30,7 @@ export default function SendOTPForm({
             <Loading />
           ) : (
             <button type="submit" className="btn btn--primary w-full">
-              Send code
+              ارسال کد تایید
             </button>
           )}
         </div>

@@ -47,7 +47,7 @@ module.exports = {
         background: withOpacity('--color-grey'),
       },
       fontFamily: {
-        sans: ['var(--font-jakarta)', ...fontFamily.sans],
+        sans: ['var(--font-vazir)', ...fontFamily.sans],
       },
       container: {
         center: true,

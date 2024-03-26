@@ -11,12 +11,16 @@ type AuthResponse = {
   };
 };
 
+type OnResendOtpHandler =
+  | React.FormEventHandler<HTMLFormElement>
+  | React.MouseEventHandler<HTMLButtonElement>;
+
 type Props = {
   onBack: () => void;
   otp: string;
   setOtp: React.Dispatch<React.SetStateAction<string>>;
-  onSubmit: FormEventHandler<HTMLFormElement>;
-  onResendOtp: MouseEventHandler<HTMLButtonElement>;
+  onSubmit?: React.FormEventHandler<HTMLFormElement>;
+  onResendOtp?: OnResendOtpHandler;
   time: number;
   otpResponse: AuthResponse | undefined;
   isCheckingOtp: boolean;
@@ -34,7 +38,7 @@ export default function CheckOTPForm({
 }: Props) {
   return (
     <div>
-      <button onClick={onBack} className="mb-4">
+      <button onClick={onBack} className="mb-4" >
         <HiArrowNarrowRight className="w-6 h-6 text-secondary-500" />
       </button>
       {otpResponse && (
@@ -49,7 +53,11 @@ export default function CheckOTPForm({
         {time > 0 ? (
           <p>{time} ثانیه تا ارسال مجدد کد</p>
         ) : (
-          <button onClick={onResendOtp}>ارسال مجدد کد؟</button>
+          <button
+            onClick={onResendOtp as React.MouseEventHandler<HTMLButtonElement>}
+          >
+            ارسال مجدد کد؟
+          </button>
         )}
       </div>
 
