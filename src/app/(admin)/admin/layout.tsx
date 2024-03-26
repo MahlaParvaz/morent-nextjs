@@ -1,16 +1,12 @@
-import type { Metadata } from 'next';
-// import { Inter } from 'next/font/google';
-import './globals.css';
-import Header from './Header';
-import vazirFont from '../constants/localFonts';
-import Providers from './Providers';
+import vazirFont from '@/src/constants/localFonts';
+import '../../globals.css';
+import Providers from '@/src/app/Providers';
 import { Toaster } from 'react-hot-toast';
+// import AdminSideBar from './AdminSideBar';
 
-// const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'Car Shop',
-  description: 'Online Car Shop Website',
+export const metadata = {
+  title: 'پروفایل ادمین',
+  description: 'پروفایل ادمین',
 };
 
 export default function RootLayout({
@@ -19,14 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir='rtl' >
+    <html lang="fa" dir="rtl">
       <body
         suppressHydrationWarning={true}
         className={`${vazirFont.variable} font-sans bg-background`}
       >
         <Providers>
           <Toaster />
-          <Header />
           <div className="container xl:max-w-screen-xl">{children}</div>
         </Providers>
       </body>

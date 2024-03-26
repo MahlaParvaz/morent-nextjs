@@ -19,7 +19,7 @@ export default function TextField({ label, name, value, onChange }: Props) {
         type="text"
         name={name}
         id={name}
-        value={value}
+        value={value || ''}
         onChange={onChange}
       />
     </div>
